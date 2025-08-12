@@ -119,7 +119,6 @@ interface Props {
 const props = defineProps<Props>();
 const emit = defineEmits();
 const resumeData = props.resumeData;
-const selectedLayout = props.selectedLayout;
 
 const activeSection = ref("personal");
 

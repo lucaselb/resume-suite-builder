@@ -1,42 +1,42 @@
-import { reactive, ref } from 'vue';
-import type { ResumeData, LayoutType } from '../types/resume';
+import { reactive } from "vue";
+import type { ResumeData } from "../types/resume";
 
 export function useResume() {
   const resumeData = reactive<ResumeData>({
     personalInfo: {
-      fullName: '',
-      email: '',
-      phone: '',
-      address: '',
-      website: '',
-      linkedin: '',
-      github: ''
+      fullName: "",
+      email: "",
+      phone: "",
+      address: "",
+      website: "",
+      linkedin: "",
+      github: "",
     },
-    summary: '',
+    summary: "",
     experience: [],
     education: [],
     skills: [],
     projects: [],
     certifications: [],
     languages: [],
-    selectedLayout: 1
+    selectedLayout: 1,
   });
 
   const addExperience = () => {
     resumeData.experience.push({
       id: Date.now().toString(),
-      company: '',
-      position: '',
-      location: '',
-      startDate: '',
-      endDate: '',
+      company: "",
+      position: "",
+      location: "",
+      startDate: "",
+      endDate: "",
       current: false,
-      description: ''
+      description: "",
     });
   };
 
   const removeExperience = (id: string) => {
-    const index = resumeData.experience.findIndex(exp => exp.id === id);
+    const index = resumeData.experience.findIndex((exp) => exp.id === id);
     if (index > -1) {
       resumeData.experience.splice(index, 1);
     }
@@ -45,18 +45,18 @@ export function useResume() {
   const addEducation = () => {
     resumeData.education.push({
       id: Date.now().toString(),
-      institution: '',
-      degree: '',
-      field: '',
-      startDate: '',
-      endDate: '',
-      gpa: '',
-      description: ''
+      institution: "",
+      degree: "",
+      field: "",
+      startDate: "",
+      endDate: "",
+      gpa: "",
+      description: "",
     });
   };
 
   const removeEducation = (id: string) => {
-    const index = resumeData.education.findIndex(edu => edu.id === id);
+    const index = resumeData.education.findIndex((edu) => edu.id === id);
     if (index > -1) {
       resumeData.education.splice(index, 1);
     }
@@ -65,14 +65,14 @@ export function useResume() {
   const addSkill = () => {
     resumeData.skills.push({
       id: Date.now().toString(),
-      name: '',
-      level: 'Intermediate',
-      category: ''
+      name: "",
+      level: "Intermediate",
+      category: "",
     });
   };
 
   const removeSkill = (id: string) => {
-    const index = resumeData.skills.findIndex(skill => skill.id === id);
+    const index = resumeData.skills.findIndex((skill) => skill.id === id);
     if (index > -1) {
       resumeData.skills.splice(index, 1);
     }
@@ -81,18 +81,18 @@ export function useResume() {
   const addProject = () => {
     resumeData.projects.push({
       id: Date.now().toString(),
-      name: '',
-      description: '',
+      name: "",
+      description: "",
       technologies: [],
-      url: '',
-      github: '',
-      startDate: '',
-      endDate: ''
+      url: "",
+      github: "",
+      startDate: "",
+      endDate: "",
     });
   };
 
   const removeProject = (id: string) => {
-    const index = resumeData.projects.findIndex(project => project.id === id);
+    const index = resumeData.projects.findIndex((project) => project.id === id);
     if (index > -1) {
       resumeData.projects.splice(index, 1);
     }
@@ -101,17 +101,17 @@ export function useResume() {
   const addCertification = () => {
     resumeData.certifications.push({
       id: Date.now().toString(),
-      name: '',
-      issuer: '',
-      date: '',
-      expiryDate: '',
-      credentialId: '',
-      url: ''
+      name: "",
+      issuer: "",
+      date: "",
+      expiryDate: "",
+      credentialId: "",
+      url: "",
     });
   };
 
   const removeCertification = (id: string) => {
-    const index = resumeData.certifications.findIndex(cert => cert.id === id);
+    const index = resumeData.certifications.findIndex((cert) => cert.id === id);
     if (index > -1) {
       resumeData.certifications.splice(index, 1);
     }
@@ -120,13 +120,13 @@ export function useResume() {
   const addLanguage = () => {
     resumeData.languages.push({
       id: Date.now().toString(),
-      name: '',
-      proficiency: 'Conversational'
+      name: "",
+      proficiency: "Conversational",
     });
   };
 
   const removeLanguage = (id: string) => {
-    const index = resumeData.languages.findIndex(lang => lang.id === id);
+    const index = resumeData.languages.findIndex((lang) => lang.id === id);
     if (index > -1) {
       resumeData.languages.splice(index, 1);
     }
@@ -142,22 +142,22 @@ export function useResume() {
       Object.assign(resumeData, data);
       return true;
     } catch (error) {
-      console.error('Error importing resume data:', error);
+      console.error("Error importing resume data:", error);
       return false;
     }
   };
 
   const resetResume = () => {
     resumeData.personalInfo = {
-      fullName: '',
-      email: '',
-      phone: '',
-      address: '',
-      website: '',
-      linkedin: '',
-      github: ''
+      fullName: "",
+      email: "",
+      phone: "",
+      address: "",
+      website: "",
+      linkedin: "",
+      github: "",
     };
-    resumeData.summary = '';
+    resumeData.summary = "";
     resumeData.experience = [];
     resumeData.education = [];
     resumeData.skills = [];
@@ -182,6 +182,6 @@ export function useResume() {
     removeLanguage,
     exportResumeData,
     importResumeData,
-    resetResume
+    resetResume,
   };
 }

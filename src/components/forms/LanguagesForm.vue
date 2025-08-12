@@ -222,16 +222,6 @@ const updateLanguage = (id: string, field: keyof Language, value: any) => {
   emit("update:languages", updated);
 };
 
-const getProficiencyDescription = (level: string): string => {
-  const descriptions = {
-    Basic: "Can understand and use basic phrases",
-    Conversational: "Can hold basic conversations",
-    Fluent: "Can communicate effectively in most situations",
-    Native: "Native or bilingual proficiency",
-  };
-  return descriptions[level as keyof typeof descriptions] || "";
-};
-
 const getProficiencyIcon = (level: string): string => {
   const icons = {
     Basic: "🌱",
