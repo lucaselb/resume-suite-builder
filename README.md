@@ -48,4 +48,4 @@ This project is for educational and entertainment purposes.
 
 ## Live Demo
 
-`https://lucaselb.github.io/resume-suite-builder/`
+https://lucaselb.github.io/resume-suite-builder/
